@@ -18,8 +18,8 @@ public class SessaoController {
 	@Autowired
 	private FilmeDao filmeDao;
 	
-	@GetMapping("/adm/sessao")
-	public ModelAndView form( @RequestParam("ID") Integer id ) {
+	@GetMapping("/admin/sessao")
+	public ModelAndView form( @RequestParam("salaId") Integer id ) {
 		
 		ModelAndView mv = new ModelAndView("sessao/sessao");
 		
