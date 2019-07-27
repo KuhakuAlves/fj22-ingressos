@@ -24,7 +24,7 @@ public class SessaoController {
 		ModelAndView mv = new ModelAndView("sessao/sessao");
 		
 		mv.addObject("sala", salaDao.findOne(id));
-		mv.addObject("Filmes", filmeDao.findAll());
+		mv.addObject("filmes", filmeDao.findAll());
 		
 		return mv;
 		
