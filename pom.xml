@@ -8,7 +8,12 @@
     <artifactId>ingresso</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
+<developers>
+  <developer>
+    <name>Ricardo Alves</name>
+    <email>ricardo@ricardo</email>
+  </developer>
+</developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
