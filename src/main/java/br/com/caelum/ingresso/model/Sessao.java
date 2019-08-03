@@ -59,4 +59,10 @@ public class Sessao {
 	   
    }
 
+public Sessao(LocalTime horario, Filme filme, Sala sala) {
+	this.horario = horario;
+	this.filme = filme;
+	this.sala  = sala;
+}
+
 }
