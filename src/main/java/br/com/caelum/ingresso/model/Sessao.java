@@ -22,6 +22,14 @@ public class Sessao {
 	private Filme filme;
 	
 	private LocalTime horario;
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public Sala getSala() {
 		return sala;

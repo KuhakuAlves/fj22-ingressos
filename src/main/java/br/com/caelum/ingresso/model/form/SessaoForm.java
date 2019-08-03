@@ -50,8 +50,8 @@ public class SessaoForm {
 		Sessao sessao = new Sessao(); 
 		
 		sessao.setHorario(this.horario);
-		sessao.setFilme(filmeDao.findOne(this.salaId));
-		sessao.setSala(salaDao.findOne(this.filmeId));
+		sessao.setFilme(filmeDao.findOne(this.filmeId));
+		sessao.setSala(salaDao.findOne(this.salaId));
 		
 		return sessao;
 	}
