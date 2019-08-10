@@ -1,6 +1,7 @@
 package br.com.caelum.ingresso.teste;
 
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -28,8 +29,8 @@ public class GerenciadorDeSessaoTest {
 	@Before
 	public void preparaSessoes() {
 		
-		this.rogueOne = new Filme("Rogue One", Duration.ofMinutes(120),"SCI-FI");
-		this.sala3D = new Sala("Sala 3D");
+		this.rogueOne = new Filme("Rogue One", Duration.ofMinutes(120),"SCI-FI", BigDecimal.ONE);
+		this.sala3D = new Sala("Sala 3D", BigDecimal.TEN);
 		
 		this.sessaoDasDez = new Sessao(LocalTime.parse("10:00:00"), rogueOne, sala3D);
 		this.sessaoDastreze = new Sessao(LocalTime.parse("13:00:00"), rogueOne, sala3D);
