@@ -23,6 +23,7 @@ public class SessaoForm {
 	@NotNull
 	private Integer filmeId;
 	
+	
 
 	public LocalTime getHorario() {
 		return horario;
@@ -49,10 +50,10 @@ public class SessaoForm {
 	}
 
 	public Sessao toSessao(SalaDao salaDao, FilmeDao filmeDao) {
-		Sessao sessao = new Sessao( ); 
-		sessao.setHorario(this.horario);
-		sessao.setFilme(filmeDao.findOne(this.filmeId));
-		sessao.setSala(salaDao.findOne(this.salaId));
+		Sessao sessao = new Sessao(this.horario, filmeDao.findOne(this.filmeId), salaDao.findOne(this.salaId) ); 
+//		sessao.setHorario(this.horario);
+//		sessao.setFilme(filmeDao.findOne(this.filmeId));
+//		sessao.setSala(salaDao.findOne(this.salaId));
 		return sessao;
 	}
 

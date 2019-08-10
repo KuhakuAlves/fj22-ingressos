@@ -12,23 +12,26 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Sessao {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@ManyToOne
 	private Sala sala;
-	
+
 	@ManyToOne
 	private Filme filme;
-	
+
 	private LocalTime horario;
-	
+
 	private BigDecimal preco;
-	
+
 	public BigDecimal getPreco() {
-		return preco.setScale(2, RoundingMode.HALF_UP);
+		if (preco != null) {
+			return preco.setScale(2, RoundingMode.HALF_UP);
+		}
+		return preco;
 	}
 
 	public void setPreco(BigDecimal preco) {
@@ -66,16 +69,16 @@ public class Sessao {
 	public void setHorario(LocalTime horario) {
 		this.horario = horario;
 	}
-	
-   public Sessao() {
-	   
-   }
 
-public Sessao(LocalTime horario, Filme filme, Sala sala) {
-	this.horario = horario;
-	this.filme = filme;
-	this.sala  = sala;
-	this.preco = sala.getPreco().add(filme.getPreco());
-}
+	public Sessao() {
+
+	}
+
+	public Sessao(LocalTime horario, Filme filme, Sala sala) {
+		this.horario = horario;
+		this.filme = filme;
+		this.sala = sala;
+		this.preco = sala.getPreco().add(filme.getPreco());
+	}
 
 }
