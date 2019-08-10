@@ -31,4 +31,10 @@ public class SessaoDao {
 				.getResultList();
 	}
 	
+	public Sessao findOne(Integer id) {
+		return manager.find(Sessao.class, id);
+	}
+	
+	
+	
 }
